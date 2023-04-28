@@ -194,4 +194,5 @@ int main() {
 	else {
 		cout << "x = y";
 	}
+	cout << "nhin xem lan sau cuoi, la bao dieu tiec nuoi" << endl;
 }
