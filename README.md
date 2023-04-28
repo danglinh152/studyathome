@@ -1,2 +1,2 @@
 # studyathome
-tui test ạ :>
+nơi mà tui tự học ở nhà :>
