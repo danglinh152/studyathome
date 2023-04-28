@@ -36,6 +36,7 @@ public:
 istream& operator >> (istream& is, Engineer& A) {
 	string name, date_of_birth, countryside;
 	cout << "Nhap ho va ten: ";
+	cin.ignore();
 	getline(is, name);
 	cout << "Nhap ngay thang nam sinh: ";
 	is >> date_of_birth;
@@ -44,7 +45,7 @@ istream& operator >> (istream& is, Engineer& A) {
 	getline(is, countryside);
 	A.set_info(name, date_of_birth, countryside);
 	cout << "Nhap truong dai hoc: ";
-	is >> A.uni;
+	getline(is, A.uni);
 	cout << "Nhap nam tot nghiep: ";
 	is >> A.graduate_year;
 	return is;
@@ -59,10 +60,22 @@ ostream& operator << (ostream& os, Engineer A) {
 	os << "Nam tot nghiep: " << A.graduate_year << endl;
 	return os;
 }
+void NhapKiSu(Engineer A[], int n) {
+	for (int i = 0; i < n; i++) {
+		cin >> A[i];
+	}
+}
+void XuatKiSu(Engineer A[], int n) {
+	for (int i = 0; i < n; i++) {
+		cout << A[i] << endl;
+	}
+}
 
 int main() {
-	Engineer A;
-	cin >> A;
-	cout << A;
-	cout << "ditmegithub";
+	int n;
+	cout << "Nhap n Ki su: ";
+	cin >> n;
+	Engineer* A = new Engineer[n];
+	NhapKiSu(A, n);
+	XuatKiSu(A, n);
 }
